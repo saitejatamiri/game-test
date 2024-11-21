@@ -24,7 +24,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip  # Upgrade pip to the latest version
-        pip install pytest  # Install pytest to run tests
+        pip install random 
 
     - name: Run tests
       run: |
