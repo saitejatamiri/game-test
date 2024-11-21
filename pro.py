@@ -3,13 +3,13 @@ import requests
 url = "https://app.launchdarkly.com/api/v2/projects"
 
 payload = {
-  "key": "00001111",
-  "name": "candy123"
+  "key": "000011112",
+  "name": "candysai"
 }
 
 headers = {
   "Content-Type": "application/json",
-  "Authorization": "api-205f67ed-bc69-45c2-b984-4e179818b659"
+  "Authorization": "LD_PASS"
 }
 
 response = requests.post(url, json=payload, headers=headers)
