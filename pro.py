@@ -9,7 +9,7 @@ payload = {
 
 headers = {
   "Content-Type": "application/json",
-  "Authorization": "YOUR_API_KEY_HERE"
+  "Authorization": "tock"
 }
 
 response = requests.post(url, json=payload, headers=headers)
