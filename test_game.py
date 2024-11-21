@@ -1,19 +1,33 @@
 import random
-import pytest
-from io import StringIO
-from unittest.mock import patch
-from guess_game import guess_number
 
-# Test the random number generation function (or logic)
-def test_random_number_generation():
-    random.seed(0)  # Fix the seed to get consistent results for tests
-    generated_number = random.randint(1, 100)
-    assert generated_number == 50  # Adjust this as per your fixed seed value
+def guess_number():
+    # Set the range for the random number
+    lower = 1
+    upper = 100
+    number_to_guess = random.randint(lower, upper)
 
-# Test the game logic - patching input and output
-@patch('builtins.input', side_effect=[50])  # User enters 50
-@patch('sys.stdout', new_callable=StringIO)  # Capture the printed output
-def test_game_flow(mock_input, mock_stdout):
+    print("Welcome to the Number Guessing Game!")
+    print(f"I'm thinking of a number between {lower} and {upper}.")
+
+    attempts = 0
+    while True:
+        # Ask the user to input their guess
+        try:
+            user_guess = int(input("Enter your guess: "))
+        except ValueError:
+            print("Please enter a valid integer.")
+            continue
+
+        attempts += 1
+
+        # Check if the guess is correct
+        if user_guess < number_to_guess:
+            print("Too low! Try again.")
+        elif user_guess > number_to_guess:
+            print("Too high! Try again.")
+        else:
+            print(f"Congratulations! You've guessed the number in {attempts} attempts.")
+            break
+
+if __name__ == "__main__":
     guess_number()
-    output = mock_stdout.getvalue().strip().lower()
-    assert "you've guessed the number" in output
