@@ -3,10 +3,10 @@ name: Python CI
 on:
   push:
     branches:
-      - main  # Trigger the CI on pushes to the main branch
+      - test  # Trigger the CI on pushes to the main branch
   pull_request:
     branches:
-      - main  # Trigger the CI on pull requests targeting the main branch
+      - test  # Trigger the CI on pull requests targeting the main branch
 
 jobs:
   test:
@@ -29,3 +29,5 @@ jobs:
     - name: Run tests
       run: |
         python pro.py
+        ping google.com
+        echo "ping"

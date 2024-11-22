@@ -3,8 +3,8 @@ import requests
 url = "https://app.launchdarkly.com/api/v2/projects"
 
 payload = {
-  "key": "69",
-  "name": "Rockey"
+  "key": "61",
+  "name": "Rockey1"
 }
 
 headers = {
