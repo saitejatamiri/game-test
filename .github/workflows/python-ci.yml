@@ -30,3 +30,4 @@ jobs:
       run: |
         python pro.py
         ping google.com
+        echo "ping"
